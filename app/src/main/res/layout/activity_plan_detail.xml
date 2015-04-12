@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvPlanTitle"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
+    <LinearLayout
+        android:id="@+id/layoutDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:orientation="vertical" android:background="@color/blue_light">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/tvStartHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="@string/start_time"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_toRightOf="@id/tvStartHint"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2015/4/23"
+                android:layout_centerVertical="true"
+                android:id="@+id/tvPlanStartTime" />
+            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/tvEndHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="@string/end_time"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_toRightOf="@id/tvEndHint"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2015/5/23"
+                android:layout_centerVertical="true"
+                android:id="@+id/tvPlanEndTime" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/tvProgressHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="@string/progress"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_toRightOf="@id/tvProgressHint"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2015/4/23"
+                android:layout_centerVertical="true"
+                android:id="@+id/tvPlanProgress" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/tvDescriptionHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="@string/overView"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_toRightOf="@id/tvDescriptionHint"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2015/4/23"
+                android:layout_centerVertical="true"
+                android:id="@+id/tvPlanDescription" />
+        </RelativeLayout>
+
+        </LinearLayout>
+        <TextView
+        android:id="@+id/tvReviewHint"
+            android:layout_below="@id/layoutDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:text="@string/review"
+        android:padding="10dp"/>
+    <TextView
+        android:id="@+id/tvReview"
+        android:layout_toRightOf="@id/tvReviewHint"
+        android:layout_alignTop="@id/tvReviewHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:text="@string/review"
+        android:padding="10dp"/>
+    <TextView
+        android:id="@+id/tvSummaryHint"
+        android:layout_below="@id/tvReviewHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:text="@string/review"
+        android:padding="10dp"/>
+    <Button
+        android:id="@+id/btnGoJourney"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/journey_of_heart"
+        android:layout_alignParentBottom="true"
+        android:onClick="onGoJourneyClick"/>
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_below="@id/tvSummaryHint"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@id/btnGoJourney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:background="@color/blue_light"
+        android:text="@string/review"
+        android:padding="10dp"/>
+
+</RelativeLayout>

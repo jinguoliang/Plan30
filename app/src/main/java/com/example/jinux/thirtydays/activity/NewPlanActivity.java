@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.lidroid.xutils.DbUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
 
 
@@ -79,7 +80,6 @@ public class NewPlanActivity extends Activity {
         plan.progressDay = "第一天";
         try {
             mDb.save(plan);
-
         } catch (DbException e) {
             e.printStackTrace();
         }

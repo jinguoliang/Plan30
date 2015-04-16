@@ -12,45 +12,41 @@
         android:text="@string/title"/>
     <EditText
         android:id="@+id/tvPlanTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/title"
         android:layout_below="@id/tvTitleHint"/>
     <TextView
         android:id="@+id/tvStartTimeHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvPlanTitle"
-        android:text="@string/title"/>
+        android:text="@string/start_time"/>
     <EditText
         android:id="@+id/tvStartTime"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title"
         android:layout_below="@id/tvStartTimeHint"/>
     <TextView
         android:id="@+id/tvEndTimeHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvStartTime"
-        android:text="@string/title"/>
+        android:text="@string/end_time"/>
     <EditText
         android:id="@+id/tvEndTime"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title"
         android:layout_below="@id/tvEndTimeHint"/>
     <TextView
         android:id="@+id/tvPlanHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvEndTime"
-        android:text="@string/title"/>
+        android:text="@string/overView"/>
     <EditText
         android:id="@+id/tvPlanDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title"
         android:layout_below="@id/tvPlanHint"/>
     <Button
         android:id="@+id/btnSave"

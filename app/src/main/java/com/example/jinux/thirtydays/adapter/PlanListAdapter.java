@@ -21,7 +21,7 @@ import java.util.List;
 public class PlanListAdapter extends BaseAdapter{
 
     private final Context mContext;
-    private final List<PlanItem> mData;
+    private List<PlanItem> mData;
 
     public PlanListAdapter(Context c, List<PlanItem> data){
         this.mContext =c;
@@ -61,6 +61,17 @@ public class PlanListAdapter extends BaseAdapter{
 
         return convertView;
     }
+
+    public void setData(List<PlanItem> data){
+        mData = data;
+        notifyDataSetChanged();
+    }
+
+    public void addData(List<PlanItem> data){
+        mData.addAll(data);
+        notifyDataSetChanged();
+    }
+
 
     class ViewHolder {
         TextView  tvPlanName;

@@ -47,16 +47,13 @@ public class MainActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPlanListAdapter.setData(preparePlanItemData());
+    }
+
     private List<PlanItem> preparePlanItemData() {
-        String plansName[] = {"做饭","锻炼腹肌","跑步","做俯卧撑","爬山","跳舞"};
-        List<PlanItem> data = new LinkedList<PlanItem>();
-
-        for(String planName : plansName) {
-            PlanItem item = new PlanItem();
-            item.name = planName;
-            data.add(item);
-        }
-
         DbUtils db = DbUtils.create(this);
         try {
             List<PlanItem> plans = db.findAll(PlanItem.class);

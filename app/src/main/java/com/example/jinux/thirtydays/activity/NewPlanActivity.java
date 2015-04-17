@@ -6,12 +6,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
+
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class NewPlanActivity extends Activity {
@@ -73,11 +77,12 @@ public class NewPlanActivity extends Activity {
 
     public void onSaveClick(View view) {
         PlanItem plan = new PlanItem();
-        plan.name = mName.getText().toString();
-        plan.startTime = mStartTime.getText().toString();
-        plan.endTime = mEndTime.getText().toString();
-        plan.description = mDescription.getText().toString();
-        plan.progressDay = "第一天";
+        plan.setName(mName.getText().toString());
+        String time = "";
+        plan.setStartTime(mStartTime.getText().toString());
+        plan.setEndTime(mEndTime.getText().toString());
+        plan.setDescription( mDescription.getText().toString());
+        plan.setProgressDay("第一天");
         try {
             mDb.save(plan);
         } catch (DbException e) {

@@ -15,5 +15,6 @@
     <string name="title">标题</string>
     <string name="save">保存</string>
     <string name="back">返回</string>
+    <string name="todaySummary">今日总结</string>
 
 </resources>

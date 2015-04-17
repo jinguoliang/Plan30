@@ -4,12 +4,14 @@ package com.example.jinux.thirtydays.bean;
  * Created by jinux on 15-4-6.
  */
 public class PlanItem {
-    public long id;
-    public String name;
-    public String startTime;
-    public String endTime;
-    public String progressDay;
-    public String description;
+    private long id;
+    private String name;
+    private String startTime;
+    private String endTime;
+    private String progressDay;
+    private String description;
+    private int todayReview;
+    private String todaySummary;
 
     public long getId() {
         return id;
@@ -57,5 +59,21 @@ public class PlanItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getTodayReview() {
+        return todayReview;
+    }
+
+    public void setTodayReview(int todayReview) {
+        this.todayReview = todayReview;
+    }
+
+    public String getTodaySummary() {
+        return todaySummary;
+    }
+
+    public void setTodaySummary(String todaySummary) {
+        this.todaySummary = todaySummary;
     }
 }

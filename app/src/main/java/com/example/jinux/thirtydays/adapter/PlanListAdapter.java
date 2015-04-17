@@ -56,7 +56,7 @@ public class PlanListAdapter extends BaseAdapter{
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.tvPlanName.setText(planItem.name);
+        holder.tvPlanName.setText(planItem.getName());
 
 
         return convertView;

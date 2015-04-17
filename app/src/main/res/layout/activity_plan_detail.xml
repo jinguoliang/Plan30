@@ -117,14 +117,12 @@
         android:textSize="10dp"
         android:text="@string/review"
         android:padding="10dp"/>
-    <TextView
-        android:id="@+id/tvReview"
+    <RatingBar
+        android:id="@+id/rtReview"
         android:layout_toRightOf="@id/tvReviewHint"
         android:layout_alignTop="@id/tvReviewHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
-        android:text="@string/review"
         android:padding="10dp"/>
     <TextView
         android:id="@+id/tvSummaryHint"
@@ -132,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="10dp"
-        android:text="@string/review"
+        android:text="@string/todaySummary"
         android:padding="10dp"/>
     <Button
         android:id="@+id/btnGoJourney"
@@ -141,7 +139,7 @@
         android:text="@string/journey_of_heart"
         android:layout_alignParentBottom="true"
         android:onClick="onGoJourneyClick"/>
-    <TextView
+    <EditText
         android:id="@+id/tvSummary"
         android:layout_below="@id/tvSummaryHint"
         android:layout_alignParentRight="true"
@@ -151,7 +149,6 @@
         android:layout_height="wrap_content"
         android:textSize="10dp"
         android:background="@color/blue_light"
-        android:text="@string/review"
         android:padding="10dp"/>
 
 </RelativeLayout>

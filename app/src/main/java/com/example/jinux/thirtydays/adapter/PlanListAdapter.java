@@ -29,6 +29,9 @@ public class PlanListAdapter extends BaseAdapter{
     }
     @Override
     public int getCount() {
+        if (mData == null) {
+            return 0;
+        }
         return mData.size();
     }
 

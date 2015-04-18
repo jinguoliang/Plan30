@@ -13,6 +13,7 @@ import com.example.jinux.thirtydays.bean.PlanItem;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -20,9 +21,13 @@ import java.util.Date;
 
 public class NewPlanActivity extends Activity {
 
+    @ViewInject(R.id.tvPlanTitle)
     private EditText mName;
+    @ViewInject(R.id.tvPlanDescription)
     private EditText mDescription;
+    @ViewInject(R.id.tvEndTime)
     private EditText mEndTime;
+    @ViewInject(R.id.tvStartTime)
     private EditText mStartTime;
     private DbUtils mDb;
 
@@ -30,9 +35,9 @@ public class NewPlanActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_plan);
+        ViewUtils.inject(this);
         mDb = DbUtils.create(this);
 
-        initView();
         initData();
     }
 
@@ -41,12 +46,6 @@ public class NewPlanActivity extends Activity {
     }
 
 
-    private void initView() {
-        mName = (EditText)findViewById(R.id.tvPlanTitle);
-        mStartTime = (EditText)findViewById(R.id.tvStartTime);
-        mEndTime = (EditText)findViewById(R.id.tvEndTime);
-        mDescription = (EditText)findViewById(R.id.tvPlanDescription);
-    }
 
 
     @Override

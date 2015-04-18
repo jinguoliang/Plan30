@@ -11,7 +11,9 @@ import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Controller;
 import com.lidroid.xutils.DbUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 /**
  * Created by jinux on 15-4-6.
@@ -20,21 +22,29 @@ public class PlanDetailActivity extends Activity {
 
     public static final String IS_ADD_NEW = "isAddNewPlan";
     private DbUtils mDb;
-    private TextView mName;
-    private TextView mStartTime;
-    private TextView mEndTime;
-    private TextView mDescription;
-    private TextView mProgress;
     private PlanItem plan;
+
+    @ViewInject(R.id.tvPlanTitle)
+    private TextView mName;
+    @ViewInject(R.id.tvPlanStartTime)
+    private TextView mStartTime;
+    @ViewInject(R.id.tvPlanEndTime)
+    private TextView mEndTime;
+    @ViewInject(R.id.tvPlanDescription)
+    private TextView mDescription;
+    @ViewInject(R.id.tvPlanProgress)
+    private TextView mProgress;
+    @ViewInject(R.id.rtReview)
     private RatingBar mTodayReview;
+    @ViewInject(R.id.tvSummary)
     private TextView mTodaySummary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_detail);
+        ViewUtils.inject(this);
         mDb = DbUtils.create(this);
-        initUI();
         initData();
     }
 
@@ -56,20 +66,10 @@ public class PlanDetailActivity extends Activity {
 
     }
 
-    private void initUI() {
-        mName = (TextView) findViewById(R.id.tvPlanTitle);
-        mStartTime = (TextView) findViewById(R.id.tvPlanStartTime);
-        mEndTime = (TextView) findViewById(R.id.tvPlanEndTime);
-        mProgress = (TextView) findViewById(R.id.tvPlanProgress);
-        mDescription = (TextView) findViewById(R.id.tvPlanDescription);
-        mTodayReview = (RatingBar) findViewById(R.id.rtReview);
-        mTodaySummary = (TextView) findViewById(R.id.tvSummary);
-    }
-
     @Override
     protected void onPause() {
         super.onPause();
-            plan.setTodayReview(mTodayReview.getProgress());
+        plan.setTodayReview(mTodayReview.getProgress());
         plan.setTodaySummary(mTodaySummary.getText().toString());
         try {
             mDb.update(plan);

@@ -6,14 +6,20 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.jinux.thirtydays.Constants;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Controller;
+import com.example.jinux.thirtydays.common.TimeUtil;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
 import com.lidroid.xutils.view.annotation.ViewInject;
+
+import java.text.ParseException;
+import java.util.Calendar;
 
 /**
  * Created by jinux on 15-4-6.
@@ -56,7 +62,7 @@ public class PlanDetailActivity extends Activity {
             mName.setText(plan.getName());
             mStartTime.setText(plan.getStartTime());
             mEndTime.setText(plan.getEndTime());
-            mProgress.setText(plan.getProgressDay());
+            setPlanProgress();
             mDescription.setText(plan.getDescription());
             mTodayReview.setProgress(plan.getTodayReview());
             mTodaySummary.setText(plan.getTodaySummary());
@@ -64,6 +70,23 @@ public class PlanDetailActivity extends Activity {
             e.printStackTrace();
         }
 
+    }
+
+    private void setPlanProgress()  {
+        Calendar today = Calendar.getInstance();
+        try {
+            Calendar start = TimeUtil.fmtString2Calendar(mStartTime.getText().toString(), Constants.DATA_FMT);
+            int todayInYear = today.get(Calendar.DAY_OF_YEAR);
+            int startInYear = start.get(Calendar.DAY_OF_YEAR);
+            if(todayInYear>=startInYear){
+                mProgress.setText("第"+(todayInYear-startInYear)+"天");
+            }else{
+                Toast.makeText(this,"跨世纪的计划，佩服",Toast.LENGTH_LONG);
+                return;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -77,6 +100,8 @@ public class PlanDetailActivity extends Activity {
             e.printStackTrace();
         }
     }
+
+
 
     public void onGoJourneyClick(View view) {
         Controller.launchActivity(this, JourneyActivity.class);

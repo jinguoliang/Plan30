@@ -2,7 +2,6 @@ package com.example.jinux.thirtydays.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -75,7 +74,7 @@ public class PlanDetailActivity extends Activity {
     private void setPlanProgress()  {
         Calendar today = Calendar.getInstance();
         try {
-            Calendar start = TimeUtil.fmtString2Calendar(mStartTime.getText().toString(), Constants.DATA_FMT);
+            Calendar start = TimeUtil.fmtString2Calendar(mStartTime.getText().toString(), Constants.DATE_FMT);
             int todayInYear = today.get(Calendar.DAY_OF_YEAR);
             int startInYear = start.get(Calendar.DAY_OF_YEAR);
             if(todayInYear>=startInYear){

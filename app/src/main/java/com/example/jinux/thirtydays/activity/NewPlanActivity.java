@@ -1,26 +1,21 @@
 package com.example.jinux.thirtydays.activity;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Context;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import com.example.jinux.thirtydays.Constants;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.TimeUtil;
+import com.example.jinux.thirtydays.common.Utils;
 import com.example.jinux.thirtydays.widget.MyDatePickerDialog;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
@@ -28,16 +23,11 @@ import com.lidroid.xutils.exception.DbException;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 
-import org.w3c.dom.Text;
-
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 
-public class NewPlanActivity extends Activity {
+public class NewPlanActivity extends Activity implements TextWatcher{
 
     @ViewInject(R.id.tvPlanTitle)
     private EditText mName;
@@ -57,10 +47,9 @@ public class NewPlanActivity extends Activity {
         mDb = DbUtils.create(this);
 
         Calendar calendar = Calendar.getInstance();
-        String nowDateString = TimeUtil.fmtCalendar2String(calendar, Constants.DATA_FMT);
+        String nowDateString = TimeUtil.fmtCalendar2String(calendar, Constants.DATE_FMT);
+        mStartTime.addTextChangedListener(this);
         mStartTime.setText(nowDateString);
-//        nowDateString.replaceAll("\\D月"，)
-        mEndTime.setText(nowDateString);
     }
 
     @OnClick({R.id.tvEndTime,R.id.tvStartTime})
@@ -109,6 +98,31 @@ public class NewPlanActivity extends Activity {
             e.printStackTrace();
         }
         finish();
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        Utils.toastShow(this,"text = " + s.toString());
+        Calendar calendar = null;
+        try {
+            calendar = TimeUtil.fmtString2Calendar(s.toString(), Constants.DATE_FMT);
+            calendar.add(Calendar.DAY_OF_YEAR,30);//加30天，多一天少一天都不行
+            String nextMonthString = TimeUtil.fmtCalendar2String(calendar, Constants.DATE_FMT);
+            mEndTime.setText(nextMonthString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
     }
 }

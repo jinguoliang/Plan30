@@ -10,7 +10,7 @@ public class PlanItem {
     private String endTime;
     private String progressDay;
     private String description;
-    private int todayReview;
+    private String ratings;
     private String todaySummary;
 
     public long getId() {
@@ -61,12 +61,12 @@ public class PlanItem {
         this.description = description;
     }
 
-    public int getTodayReview() {
-        return todayReview;
+    public String getTodayReview() {
+        return ratings;
     }
 
-    public void setTodayReview(int todayReview) {
-        this.todayReview = todayReview;
+    public void setTodayReview(String ratings) {
+        this.ratings = ratings;
     }
 
     public String getTodaySummary() {

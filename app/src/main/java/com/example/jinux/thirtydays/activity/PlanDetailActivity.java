@@ -7,6 +7,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jinux.thirtydays.AppUtils;
 import com.example.jinux.thirtydays.Constants;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
@@ -38,11 +39,12 @@ public class PlanDetailActivity extends Activity {
     @ViewInject(R.id.tvPlanDescription)
     private TextView mDescription;
     @ViewInject(R.id.tvPlanProgress)
-    private TextView mProgress;
+    private TextView mtvProgress;
     @ViewInject(R.id.rtReview)
     private RatingBar mTodayReview;
     @ViewInject(R.id.tvSummary)
     private TextView mTodaySummary;
+    private int mProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +65,7 @@ public class PlanDetailActivity extends Activity {
             mEndTime.setText(plan.getEndTime());
             setPlanProgress();
             mDescription.setText(plan.getDescription());
-            mTodayReview.setProgress(plan.getTodayReview());
+            mTodayReview.setProgress(AppUtils.getRating(plan.getTodayReview(),mProgress));
             mTodaySummary.setText(plan.getTodaySummary());
         } catch (DbException e) {
             e.printStackTrace();
@@ -78,7 +80,8 @@ public class PlanDetailActivity extends Activity {
             int todayInYear = today.get(Calendar.DAY_OF_YEAR);
             int startInYear = start.get(Calendar.DAY_OF_YEAR);
             if(todayInYear>=startInYear){
-                mProgress.setText("第"+(todayInYear-startInYear)+"天");
+                mProgress = (todayInYear - startInYear + 1);
+                mtvProgress.setText("第" + mProgress + "天");
             }else{
                 Toast.makeText(this,"跨世纪的计划，佩服",Toast.LENGTH_LONG);
                 return;
@@ -91,7 +94,7 @@ public class PlanDetailActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        plan.setTodayReview(mTodayReview.getProgress());
+        plan.setTodayReview(AppUtils.setRating(plan.getTodayReview(),mProgress,mTodayReview.getProgress()));
         plan.setTodaySummary(mTodaySummary.getText().toString());
         try {
             mDb.update(plan);

@@ -123,7 +123,9 @@
         android:layout_alignTop="@id/tvReviewHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"/>
+        android:layout_marginLeft="10dp"
+        android:numStars="@integer/maxNumOfStar"
+        android:stepSize="1" />
     <TextView
         android:id="@+id/tvSummaryHint"
         android:layout_below="@id/tvReviewHint"

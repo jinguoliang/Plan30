@@ -7,7 +7,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jinux.thirtydays.AppUtils;
+import com.example.jinux.thirtydays.common.StringArray;
 import com.example.jinux.thirtydays.Constants;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
@@ -65,8 +65,10 @@ public class PlanDetailActivity extends Activity {
             mEndTime.setText(plan.getEndTime());
             setPlanProgress();
             mDescription.setText(plan.getDescription());
-            mTodayReview.setProgress(AppUtils.getRating(plan.getTodayReview(),mProgress));
-            mTodaySummary.setText(plan.getTodaySummary());
+            StringArray utils = new StringArray(plan.getTodayReview());
+            mTodayReview.setProgress(utils.getIntAt(mProgress));
+            utils = new StringArray(plan.getTodaySummary());
+            mTodaySummary.setText(utils.getStrAt(mProgress));
         } catch (DbException e) {
             e.printStackTrace();
         }
@@ -94,13 +96,26 @@ public class PlanDetailActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        plan.setTodayReview(AppUtils.setRating(plan.getTodayReview(),mProgress,mTodayReview.getProgress()));
-        plan.setTodaySummary(mTodaySummary.getText().toString());
+
+        plan.setTodayReview(getTodayReview());
+        plan.setTodaySummary(getTodaySummary());
         try {
             mDb.update(plan);
         } catch (DbException e) {
             e.printStackTrace();
         }
+    }
+
+    private String getTodaySummary() {
+        StringArray utils = new StringArray(plan.getTodaySummary());
+        utils.setStringAt(mProgress, mTodaySummary.getText().toString());
+        return utils.getString();
+    }
+
+    private String getTodayReview() {
+        StringArray utils = new StringArray(plan.getTodayReview());
+        utils.setIntAt(mProgress,mTodayReview.getProgress());
+        return utils.getString();
     }
 
 

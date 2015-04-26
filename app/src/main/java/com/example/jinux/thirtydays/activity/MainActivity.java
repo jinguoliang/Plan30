@@ -1,7 +1,10 @@
 package com.example.jinux.thirtydays.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,8 +15,10 @@ import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.adapter.PlanListAdapter;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Controller;
+import com.example.jinux.thirtydays.common.DialogUtil;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.exception.DbException;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -21,8 +26,12 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
+    private static final String TAG = "MainActivity";
     private ListView mPlanList;
     private PlanListAdapter mPlanListAdapter;
+    private Dialog mDialog;
+    private List<PlanItem> mPlans;
+    private boolean isShowDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +65,8 @@ public class MainActivity extends Activity {
     private List<PlanItem> preparePlanItemData() {
         DbUtils db = DbUtils.create(this);
         try {
-            List<PlanItem> plans = db.findAll(PlanItem.class);
-            return plans;
+            mPlans = db.findAll(PlanItem.class);
+            return mPlans;
         } catch (DbException e) {
             e.printStackTrace();
         }
@@ -89,7 +98,32 @@ public class MainActivity extends Activity {
     }
 
     public void onNewPlanClick(View v){
-        Controller.launchActivity(this, NewPlanActivity.class);
+        if(mPlans == null||mPlans.size()<10) {
+            isShowDialog = true;
+            Controller.launchActivity(MainActivity.this,NewPlanActivity.class);
+            return;
+        }
+
+        if(isShowDialog){
+            if(mDialog == null) {
+                mDialog = DialogUtil.createOkCancelDialog(this, "添加新计划", "你的计划已经10个了，你确定要这麽多吗？", "当然了", "也是哈", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDialog.hide();
+                        Controller.launchActivity(MainActivity.this, NewPlanActivity.class);
+                        isShowDialog = false;
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDialog.hide();
+                    }
+                });
+            }
+            mDialog.show();
+        }else{
+            Controller.launchActivity(MainActivity.this,NewPlanActivity.class);
+        }
     }
 
 }

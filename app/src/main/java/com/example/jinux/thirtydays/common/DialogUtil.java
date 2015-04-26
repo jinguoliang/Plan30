@@ -13,7 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.onehundredcentury.liuhaizi.R;
+import com.example.jinux.thirtydays.R;
+
 
 public class DialogUtil {
 	/**
@@ -88,80 +89,5 @@ public class DialogUtil {
 	public static Dialog createOkCancelDialog(Context context, String content, OnClickListener leftClickListener,
 			OnClickListener rightClickListener) {
 		return createOkCancelDialog(context, context.getString(R.string.dialog_title), content, context.getString(R.string.cancel), context.getString(R.string.sure), leftClickListener, rightClickListener);
-	}
-	
-	public static Dialog createChoosePhotoDialog(final Context c,
-			final ChoosePhoteDialogCallback callback) {
-		final Dialog dialog = new Dialog(c, R.style.MyDialog1);
-		Window mChoosePhotoView = dialog.getWindow();
-		mChoosePhotoView.setContentView(R.layout.choose_avatar);
-		Button albumButton = (Button) mChoosePhotoView
-				.findViewById(R.id.choose_album);
-		Button camButton = (Button) mChoosePhotoView
-				.findViewById(R.id.choose_cam);
-		Button cancelButton = (Button) mChoosePhotoView
-				.findViewById(R.id.choose_cancel);
-		albumButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				dialog.dismiss();
-				callback.onOpenAlbum();
-				// 从相册中去获取
-			}
-
-		});
-
-		camButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				dialog.dismiss();
-				callback.onOpenCamera();
-			}
-
-		});
-
-		cancelButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				dialog.dismiss();
-			}
-
-		});
-
-		return dialog;
-	}
-	
-	public static Dialog createLoadingDialog(Context context) {
-		final Dialog dialog = new Dialog(context, R.style.MyDialog1);
-		Window loadingWindow = dialog.getWindow();
-		loadingWindow.setContentView(R.layout.dialog_loading_circle);
-		ImageView loadingImage =(ImageView)loadingWindow.findViewById(R.id.loadingImage);
-		Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_loading_circle);
-		loadingImage.startAnimation(animation);
-		return dialog;
-	}
-
-	public static ProgressDialog createProgressDialog(Context context, String title, String desc) {
-		ProgressDialog pDialog = new ProgressDialog(context);
-		//设置对话框标题
-		pDialog.setTitle(title);
-		//设置对话框显示的提示信息
-		pDialog.setMessage(desc);
-		//不允许通过返回键关闭对话框
-		pDialog.setCancelable(false);
-		//设置进度条类型为水平
-		pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		pDialog.setMax(100);  
-		// 设置对话框的进度条是否是不确定的
-		pDialog.setIndeterminate(false);
-		return pDialog;
-	}
-	
-	public interface ChoosePhoteDialogCallback {
-		void onOpenAlbum();
-		void onOpenCamera();
 	}
 }

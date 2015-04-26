@@ -1,0 +1,211 @@
+<resources>
+
+    <string name="app_name">遛孩子</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="values_dir">values-nodpi</string>
+    <string name="main_home">首页</string>
+    <string name="main_my_info">我的</string>
+    <string name="main_find">发现</string>
+    <string name="main_orders">订单</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_find">发现</string>
+    <string name="title_activity_orders">OrdersActivity</string>
+    <string name="title_activity_user_center">UserCenterActivity</string>
+    <string name="title_activity_detail">详情</string>
+    <string name="title_activity_comfirm_order">支付订单</string>
+    <string name="title_activity_my_coupon">我的现金券</string>
+    <string name="title_activity_user_info">用户信息</string>
+    <string name="title_activity_favorite">收藏</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="title_activity_settings_for_push">消息提醒设置</string>
+    <string name="title_activity_settings_for_feedback">意见反馈</string>
+    <string name="title_activity_settings_for_about_us">关于我们</string>
+    <string name="title_activity_apply_refund">申请退款</string> 
+    <string name="title_activity_cooperation">商务合作</string>
+     
+    <string name="guess_u_like">猜你喜欢</string>
+    <string name="title_goods_default">比熊熊幼儿托管小屋</string>
+    <string name="desc_goods_default">亲子活动-70条评论-主编推荐</string>
+    <string name="search_city_hint">输入城市名或拼音查询</string>
+    <string name="current_city">当前城市</string>
+    <string name="gps_location">GPS定位</string>
+    <string name="error_get_location">无法定位当前城市，请稍后再试</string>
+    <string name="empty_data_tips">暂无数据</string>
+    <string name="default_adress">含光门内300米路东甜水56号（中正大厦对面）</string>
+    <string name="default_phone_no">18810476369</string>
+    <string name="detail_mechandise">商品详情</string>
+    <string name="default_mechandis_desc">本单包含：0-6岁幼儿托管一次，时间不超过8小时\n●每超过一小时按25元收费\n●幼儿在托管期间食用的食品与饮品按单价另收费\n●每超过一小时按25元收费\n●幼儿在托管期间食用的食品与饮品按单价另收费\n</string>
+    <string name="detail_pic_and_word">图文详情</string>
+    <string name="detail_notice">购买须知</string>
+    <string name="detail_show_detail">查看全部</string>
+    <string name="detail_show_all_comment">查看所有评论</string>
+    <string name="detail_comment_num">评论(%1$s)</string>
+    <string name="detail_write_comment">写评论</string>
+    <string name="detail_user_name">我就是爱吃货哈哈哈哈哈</string>
+    <string name="detail_related">其他相关</string>
+    <string name="default_related_name">瑶瑶幼儿托管园</string>
+    <string name="default_related_category">亲子活动</string>
+    <string name="default_related_solde_num">已售%1$d</string>
+    <string name="error_have_no_map">您的手机尚未安装地图应用！</string>
+    <string name="my_login_hint">你还没有登录喔</string>
+    <string name="my_login">立即登录</string>
+    <string name="my_review">我的评价</string>
+    <string name="my_favorate">我的收藏</string>
+    <string name="my_wallet">我的钱包</string>
+    <string name="my_recent_view">最近浏览</string>
+    <string name="my_settings">设置</string>
+    <string name="my_recomment_app">推荐应用</string>
+    <string name="detail_buy">立即购买</string>
+    <string name="order_choose_goods">选择商品</string>
+    <string name="order_choose_date">选择日期</string>
+    <string name="order_comming">光临</string>
+    <string name="order_orders_money">订单金额</string>
+    <string name="order_price">单价</string>
+    <string name="order_total_money">总价</string>
+    <string name="order_user_info">用户信息</string>
+    <string name="order_user_add_phone_no">添加手机号码</string>
+    <string name="order_bind_new_number">绑定新号码</string>
+    <string name="order_use_vouchers">使用抵用券</string>
+    <string name="order_vouchers">优惠抵用券</string>
+    <string name="order_commit_orders">提交订单</string>
+    <string name="error_order_count_limit">每人最多购买100张票</string>
+    <string name="finish">完成</string>
+    <string name="change_user_detail">修改个人资料</string>
+
+    <!-- 确认订单 -->
+    <string name="commit_order_detail">订单详情</string>
+    <!-- 套餐类型 -->
+    <string name="commit_combo_name">票种：</string>
+    <string name="commit_vouchers">优惠券</string>
+    <string name="commit_orders_serial_no">订单号</string>
+    <string name="commit_pay_type">支付方式</string>
+    <string name="commit_pay_zhifubao_tip1">支付宝支付</string>
+    <string name="commit_pay_zhifubao_tip2">推荐支付宝用户使用</string>
+    <string name="commit_pay_weixin_tip1">微信支付</string>
+    <string name="commit_pay_weixin_tip2">推荐已安装微信的用户使用</string>
+    <string name="commit_confirm">确认支付</string>
+    <string name="coupon_title">现金券</string>
+    <string name="coupon_deadline">有效期至</string>
+    <string name="coupon_help">使用规则</string>
+
+    <!-- 用户信息 -->
+    <string name="info_avatar">头像</string>
+    <string name="info_nick_name">昵称</string>
+    <string name="info_cell_phone_no">手机号</string>
+    <string name="info_bind_third_part_account">第三方账号绑定</string>
+    <string name="info_logout">退出当前账号</string>
+    <string name="more_than_max">超过了上限</string>
+    <string name="preview">预览</string>
+    <string name="recent_photos">最近照片</string>
+    <string name="select_photos">选择照片</string>
+    <string name="taking_pictures">拍摄照片</string>
+    <string name="max_img_limit_reached">不能选择超过%d个图像</string>
+    <!-- 评论 -->
+    <string name="commit_review">发表评论</string>
+    <string name="title_activity_my_review">我的评论</string>
+    <string name="title_activity_review">评论</string>
+    <string name="comment_empty_error">请输入评论内容</string>
+    <string name="comment_not_rating">请为商家评分</string>
+    <string name="comment_success">评论发表成功</string>
+    <string name="comment_failed">评论发表失败</string>
+    <!-- 按钮提示 -->
+    <string name="sure">确定</string>
+    <string name="back">返回</string>
+    <string name="cancel">取消</string>
+    <string name="next">下一步</string>
+    <string name="edit">编辑</string>
+    <string name="commit">提交</string>
+    <string name="confirm_to_exit">确定退出应用吗</string>
+    
+    <!-- 对话框提示 -->
+    <string name="dialog_title">提示</string>
+    <string name="dialog_content_logout">确定退出登录吗？</string>
+    <string name="dialog_exit_tip">再按一次退出程序</string>
+
+    <!-- 用户收藏 -->
+    <string name="favorite_buy_right_now">立即购买</string>
+    <!-- 评论 -->
+    <string name="hint_comment">您觉得环境如何，服务满意吗？消费体验如何?</string>
+    <string name="hint_user_name">请输入用户名</string>
+    <string name="comment_publish">发表</string>
+    <!-- 我的钱包 -->
+    <string name="score">积分</string>
+    <string name="cash_coupon">现金券</string>
+    <string name="publib_welfare">微公益</string>
+    <!-- 我的积分 -->
+    <string name="score_store">积分商城</string>
+    <string name="score_exchange_record">兑换记录</string>
+    <string name="score_city_hint">积分商城会在5月份开放，敬请期待</string>
+    <string name="score_help">使用规则</string>
+    <!-- 订单 -->
+    <string name="order_not_pay">未付款</string>
+    <string name="order_not_consume">未消费</string>
+    <string name="order_consumed">已消费</string>
+    <string name="order_refund_order">退款单</string>
+    <string name="order_item_count">数量 :</string>
+    <string name="order_item_total_price">总价 :</string>
+    <string name="order_item_num_and_money">数量：%1$d  总价：%2$d</string>
+    <string name="order_time">下单时间：%1$s</string>
+    <string name="delete">删除</string>
+    <string name="order_detail">订单详情</string>
+    <!-- 绑定手机号 -->
+    <string name="get_verify_code_hint">点击 \"获取验证码\" 按钮获取验证码</string>
+    <string name="hint_input_new_phone_no">请输入新手机号码</string>
+    <string name="success_bind_phone_no">手机号绑定成功</string>
+    <string name="failed_bind_phone_no">手机号绑定失败</string>
+    <string name="success_send_verify_code">验证码已发送,请注意查收</string>
+    <string name="fail_send_verify_code">验证码发送失败，请检查网络设置</string>    <!-- 设置 -->
+    <string name="settings_push_tip">消息提醒设置</string>
+    <string name="settings_clear_cache">清除缓存</string>
+    <string name="settings_feedback">意见反馈</string>
+    <string name="settings_version_update">版本更新</string>
+    <string name="settings_about_us">关于我们</string>
+    <string name="settings_do_more">为您做更多</string>
+    <string name="settings_version_newest">已是最新版本</string>
+    <string name="settings_version_avaliable">有新本发布哦</string>
+    <string name="settings_activity_push">活动推送</string>
+    <string name="settings_activity_push_desc">点评促销优惠活动以及精选内容</string>
+    <string name="settings_order_push">交易提醒</string>
+    <string name="settings_order_push_desc">您的订单消费等相关及时信息</string>
+    <string name="settings_feedback_tip1">遛孩子期待听到您的声音，把更好的体验带给您！</string>
+    <string name="settings_feedback_hit">欢迎提出宝贵的意见和建议，您留下的每一个字都将用来改善我们的软件</string>
+    <string name="settings_feedback_tip2">反馈（500字内）</string>
+    
+    <!-- 关于 -->
+    <string name="about_rating">喜欢遛孩子，打分鼓励一下</string>
+    <string name="about_share">分享给朋友</string>
+    <string name="about_cooperation">商家合作</string>
+    <string name="about_service">服务条款</string>
+    <string name="about_our_duty">免责声明</string>
+    <string name="about_website">官方网站</string>
+    
+     <!-- 升级 -->
+    <string name="init_can_update">有新版本发布</string>
+    <string name="init_update_now">现在升级</string>
+    <string name="init_update_nexttime">稍后升级</string>
+    <string name="init_dowloading">正在下载新版本</string>
+    <string name="init_no_network">您的网络已断开，请连网后重试</string>
+    <string name="init_willexit">下载新版本失败，10秒钟后自动进入……</string>
+    <string name="init_set_wireless">网络设置</string>
+    <string name="init_download_not_completed">下载升级包不完整,已取消这次升级。</string>
+    <string name="init_download_apk_fail">下载新版本失败,请稍后尝试……</string>
+     <string name="update_is_newest">已是最新版本</string>
+    <string name="update_can_update">有新版本发布：%1$s</string>
+    
+    <!-- 搜索 -->
+    <string name="search_edit_hint">请输入商家名、品类或商圈...</string>
+    
+    <!-- 申请退款 -->
+    <string name="order_id">订单号：%1$s</string>
+    
+    <!-- 登陆 -->
+    <string name="login_qq">QQ登录</string>
+    <string name="login_weixin">微信登录</string>
+    <string name="login_weibo">微博登录</string>
+    <string name="phone_no">010-64788096</string>
+    
+    <string name="err_refresh">刷新失败,请重试</string>
+    <string name="err_no_network">请联网后重试</string>
+</resources>

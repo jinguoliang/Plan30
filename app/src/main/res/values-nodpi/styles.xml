@@ -1,0 +1,79 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+         <style name="Widget" />
+
+    <style name="Widget.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    </style>
+	
+	<style name="Widget.Light" />
+	
+    <style name="Widget.Light.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+    </style>
+
+    <style name="Widget.ActionBar.Transparent">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.Light.ActionBar.Transparent">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
+    </style>
+    -->
+
+    <style name="main_tab_bottom">
+        <item name="android:textSize">@dimen/px28</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:paddingTop">@dimen/px23</item>
+        <item name="android:paddingBottom">@dimen/px12</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/px150</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:drawablePadding">@dimen/px12</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:textColor">@color/main_tab_text_color</item>
+    </style>
+
+    <!-- 商品评分style -->
+    <style name="ratingBarSmall" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_small</item>
+        <item name="android:minHeight">@dimen/px44</item>
+        <item name="android:maxHeight">@dimen/px44</item>
+    </style>
+
+    <!-- 大星星 -->
+    <style name="ratingBarBig" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_big</item>
+        <item name="android:minHeight">@dimen/px44</item>
+        <item name="android:maxHeight">@dimen/px44</item>
+    </style>
+    
+    
+    <style name="dialog_update" parent="@android:style/Theme.Dialog">
+	   <item name="android:windowFrame">@null</item>
+	   <item name="android:windowIsFloating">true</item>
+	   <item name="android:windowIsTranslucent">false</item>
+	   <item name="android:windowNoTitle">true</item>
+	   <item name="android:windowBackground">@color/transparent</item>
+	   <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="MyDialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MyDialog1" parent="@android:Theme.NoTitleBar">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

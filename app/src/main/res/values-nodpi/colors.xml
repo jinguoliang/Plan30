@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="green_dark">#9CDC6A</color>
+    <color name="green_tags">#7CC656</color>
+    <color name="blue">#33B5E5</color>
+    <color name="blue1">#007aff</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_white">#66FFFFFF</color>
+    <color name="light_white1">#CCFFFFFF</color>
+    <color name="black">#505050</color>
+    <color name="black1">#5b5a57</color>
+    <color name="black2">#323232</color>
+    <color name="black_light">#66000000</color>
+    <color name="gray">#7c7c7c</color>
+    <color name="gray1">#c8c8c8</color>
+    <color name="gray2">#c2c2c6</color>
+    <color name="gray_deep">#dadcde</color>
+    <color name="gray_light">#f0f3f5</color>
+    <color name="gray_white">#909090</color>
+    <color name="yellow">#FFFC00</color>
+    <color name="pink">#FF87EF</color>
+    <color name="orange">#ff9932</color>
+    <color name="orange1">#ff8822</color>
+    <color name="list_divider">#D7D7D7</color>
+    <color name="transparent">#00000000</color>
+
+    <drawable name="transparent_bg">#00000000</drawable>
+
+    <color name="listview_item_normal">#eef0ed</color>
+    <color name="listview_item_pressed">#d4d4d4</color>
+    <color name="vertical_line_color">#dadcde</color>
+    <color name="order_line_color">#c8c8c8</color>
+    <color name="bg_city_list">#668e8e8e</color>
+    <color name="city_search_hint">#ceced4</color>
+    <color name="category_item_textcolor_normal">#666666</color>
+    <color name="calendar_color_green">#60c677</color>
+    <color name="calendar_color_orange">#fc6c00</color>
+    <color name="calendar_color_black">#666666</color>
+    <color name="calendar_color_gray">#cccccc</color>
+    <color name="calendar_color_month_title">#526276</color>
+    <color name="calendar_color_white">#ffffff</color>
+    <color name="grey_dark">#999999</color>
+    <color name="dialog_button_pressed">#E8E8E8</color>
+
+</resources>

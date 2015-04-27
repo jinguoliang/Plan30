@@ -32,12 +32,13 @@ public class MainActivity extends Activity {
     private Dialog mDialog;
     private List<PlanItem> mPlans;
     private boolean isShowDialog;
+    private DbUtils db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        db = DbUtils.create(this);
         initUI();
     }
 
@@ -54,16 +55,45 @@ public class MainActivity extends Activity {
                 Controller.launchActivity(MainActivity.this,PlanDetailActivity.class,bundle);
             }
         });
+        mPlanList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, final long id) {
+                mDialog = DialogUtil.createOkCancelDialog(MainActivity.this,"删除计划","你确定删除计划吗？","当然","算了",new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDialog.hide();
+                        try {
+                            db.deleteById(PlanItem.class,id);
+                        } catch (DbException e) {
+                            e.printStackTrace();
+                        }
+                        refreshData();
+                    }
+                },new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDialog.hide();
+                    }
+                });
+                mDialog.show();
+
+                return true;
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        refreshData();
+    }
+
+    private void refreshData(){
         mPlanListAdapter.setData(preparePlanItemData());
     }
 
     private List<PlanItem> preparePlanItemData() {
-        DbUtils db = DbUtils.create(this);
+
         try {
             mPlans = db.findAll(PlanItem.class);
             return mPlans;

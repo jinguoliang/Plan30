@@ -19,7 +19,8 @@ public class StringArray {
         mList = spliteStrings(s);
     }
 
-    public  List<Integer> getIntList1(){
+    public  List<Integer> getIntList(){
+        if (mList == null) return null;
         List<String> strList= mList;
         List<Integer> intList= new ArrayList<>();
         for(String s : strList){
@@ -95,7 +96,7 @@ public class StringArray {
     }
 
     public int getIntAt(int pos){
-        List<Integer> ratings = getIntList1();
+        List<Integer> ratings = getIntList();
         if (ratings == null) return 0;
         int index = pos - 1;
         if (index < ratings.size()) {

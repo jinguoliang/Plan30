@@ -2,9 +2,7 @@ package com.example.jinux.thirtydays.activity;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,9 +16,7 @@ import com.example.jinux.thirtydays.common.Controller;
 import com.example.jinux.thirtydays.common.DialogUtil;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.exception.DbException;
-import com.lidroid.xutils.view.annotation.event.OnClick;
 
-import java.util.LinkedList;
 import java.util.List;
 
 

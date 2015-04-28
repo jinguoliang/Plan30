@@ -2,7 +2,9 @@ package com.example.jinux.thirtydays.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.text.ParseException;
 import java.util.Calendar;
@@ -31,7 +34,7 @@ public class PlanDetailActivity extends Activity {
     private PlanItem plan;
 
     @ViewInject(R.id.tvPlanTitle)
-    private TextView mName;
+    private EditText mTitle;
     @ViewInject(R.id.tvPlanStartTime)
     private TextView mStartTime;
     @ViewInject(R.id.tvPlanEndTime)
@@ -60,7 +63,7 @@ public class PlanDetailActivity extends Activity {
         long id = bundle.getLong("id");
         try {
             plan = mDb.findById(PlanItem.class, id);
-            mName.setText(plan.getName());
+            mTitle.setText(plan.getName());
             mStartTime.setText(plan.getStartTime());
             mEndTime.setText(plan.getEndTime());
             setPlanProgress();
@@ -99,6 +102,11 @@ public class PlanDetailActivity extends Activity {
 
         plan.setTodayReview(getTodayReview());
         plan.setTodaySummary(getTodaySummary());
+        if (mTitle.isEnabled()){
+            if (!TextUtils.isEmpty(mTitle.getText())){
+                plan.setName(mTitle.getText().toString().trim());
+            }
+        }
         try {
             mDb.update(plan);
         } catch (DbException e) {
@@ -118,7 +126,10 @@ public class PlanDetailActivity extends Activity {
         return utils.getString();
     }
 
-
+    @OnClick(R.id.btnEditTitle)
+    public void onEditTitleClick(View v){
+        mTitle.setEnabled(true);
+    }
 
     public void onGoJourneyClick(View view) {
         Controller.launchActivity(this, JourneyActivity.class);

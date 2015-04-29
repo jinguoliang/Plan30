@@ -18,5 +18,9 @@
     <string name="todaySummary">今日总结</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="plan">计划</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="settings">设置</string>
+    <string name="alarmTime">提醒时间</string>
+    <string name="alarmTimeDescription">设定一个时间，每天会弹出通知提醒你做计划总结</string>
 
 </resources>

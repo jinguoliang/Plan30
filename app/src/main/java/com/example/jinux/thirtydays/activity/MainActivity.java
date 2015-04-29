@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.jinux.thirtydays.R;
+import com.example.jinux.thirtydays.SettingsActivity;
 import com.example.jinux.thirtydays.adapter.PlanListAdapter;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Constants;
@@ -118,6 +119,7 @@ public class MainActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Controller.launchActivity(this, SettingsActivity.class);
             return true;
         }
 

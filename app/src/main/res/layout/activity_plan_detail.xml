@@ -18,7 +18,8 @@
         android:layout_alignBottom="@+id/imageView"
         android:layout_toRightOf="@+id/imageView"
         android:layout_toEndOf="@+id/imageView"
-        android:enabled="false"/>
+        android:enabled="false"
+        android:singleLine="true"/>
     <Button
         android:id="@+id/btnEditTitle"
         android:layout_toRightOf="@id/tvPlanTitle"
@@ -157,7 +158,8 @@
         android:layout_above="@id/btnGoJourney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:paddingTop="@dimen/px10"
+        android:gravity="top"
         android:background="@color/blue_light"
         android:padding="10dp"/>
 

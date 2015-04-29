@@ -5,7 +5,7 @@ import android.app.Dialog;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import com.example.jinux.thirtydays.Constants;
+import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.TimeUtil;
 
 import java.text.ParseException;

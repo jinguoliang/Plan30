@@ -24,6 +24,7 @@ public class SplashActivity extends Activity {
             @Override
             public void run() {
                 Controller.launchActivity(SplashActivity.this, MainActivity.class);
+                finish();
             }
         },i);
     }

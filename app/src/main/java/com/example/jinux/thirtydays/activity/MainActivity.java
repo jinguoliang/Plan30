@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.adapter.PlanListAdapter;
 import com.example.jinux.thirtydays.bean.PlanItem;
+import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.Controller;
 import com.example.jinux.thirtydays.common.DialogUtil;
 import com.lidroid.xutils.DbUtils;
@@ -124,7 +125,7 @@ public class MainActivity extends Activity {
     }
 
     public void onNewPlanClick(View v){
-        if(mPlans == null||mPlans.size()<10) {
+        if(mPlans == null||mPlans.size()< Constants.SUGGEST_PLAN_COUNT) {
             isShowDialog = true;
             Controller.launchActivity(MainActivity.this,NewPlanActivity.class);
             return;

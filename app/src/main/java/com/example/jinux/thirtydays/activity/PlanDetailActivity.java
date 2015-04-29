@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jinux.thirtydays.common.StringArray;
-import com.example.jinux.thirtydays.Constants;
+import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Controller;

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.jinux.thirtydays.SettingsActivity">
+    tools:context="com.example.jinux.thirtydays.activity.SettingsActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -35,7 +35,8 @@
             android:layout_height="wrap_content"
             android:text="@string/alarmTimeDescription"
             android:textSize="@dimen/px45"/>
-        <TextView
+        <Button
+            android:id="@+id/tvAlarmTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -45,10 +46,10 @@
             android:layout_marginTop="@dimen/px30"
             android:background="@color/blue"
             android:layout_marginBottom="@dimen/px30"
-            android:shadowDx="100"
-            android:shadowDy="100"
+            android:shadowDx="10"
+            android:shadowDy="10"
             android:shadowColor="@color/gray"
-            android:shadowRadius="5"/>
+            android:shadowRadius="1"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/px5"

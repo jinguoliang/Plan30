@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.jinux.thirtydays.R;
-import com.example.jinux.thirtydays.SettingsActivity;
 import com.example.jinux.thirtydays.adapter.PlanListAdapter;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Constants;

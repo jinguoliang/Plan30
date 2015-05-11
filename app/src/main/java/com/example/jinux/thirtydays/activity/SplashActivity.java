@@ -1,10 +1,10 @@
-package com.example.jinux.thirtydays;
+package com.example.jinux.thirtydays.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.jinux.thirtydays.activity.MainActivity;
+import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.common.Controller;
 
 

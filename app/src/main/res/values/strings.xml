@@ -22,5 +22,6 @@
     <string name="settings">设置</string>
     <string name="alarmTime">提醒时间</string>
     <string name="alarmTimeDescription">设定一个时间，每天会弹出通知提醒你做计划总结</string>
+    <string name="defualt_alarm_time">22:00</string>
 
 </resources>

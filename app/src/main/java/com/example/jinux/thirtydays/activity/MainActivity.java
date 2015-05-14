@@ -154,4 +154,7 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void onSettinsClick(View view) {
+        Controller.launchActivity(this, SettingsActivity.class);
+    }
 }

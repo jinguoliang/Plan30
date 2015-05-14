@@ -77,16 +77,15 @@ public class SettingsActivity extends Activity implements TextWatcher{
              date = TimeUtil.fmtString2Calendar(timeString, Constants.TIME_FMT);
             today.set(Calendar.HOUR_OF_DAY,date.get(Calendar.HOUR_OF_DAY));
             today.set(Calendar.MINUTE,date.get(Calendar.MINUTE));
+            today.set(Calendar.SECOND,0);
+            today.set(Calendar.MILLISECOND,0);
         } catch (ParseException e) {
             e.printStackTrace();
         }
         Date date1 = today.getTime();
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
         long startTime = date1.getTime();
-
         long interTime = Constants.ONE_DAY;
-
         Intent intent = new Intent(this, NotificationReciver.class);
         intent.setAction("reapting");
         PendingIntent pendingIntnet = PendingIntent.getBroadcast(this,0,intent,0);

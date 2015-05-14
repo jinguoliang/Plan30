@@ -17,5 +17,9 @@
         android:layout_above="@id/btnNewPlan"
         android:layout_width="match_parent"
         android:layout_height="match_parent" ></ListView>
-
+    <Button
+        android:text="Settins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSettinsClick"/>
 </RelativeLayout>

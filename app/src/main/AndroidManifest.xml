@@ -36,6 +36,9 @@
             >
         </activity>
         <receiver android:name=".receiver.NotificationReciver"></receiver>
+        <activity android:name=".activity.SummaryDialog"
+            android:label="Summary"
+            android:theme="@android:style/Theme.Dialog"></activity>
     </application>
 
 </manifest>

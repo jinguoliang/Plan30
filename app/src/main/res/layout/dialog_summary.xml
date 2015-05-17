@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.rey.material.widget.Button
+        style="@style/FlatButtonRippleStyle"
+        android:id="@+id/button_bt_flat"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px500"
+        android:background="#ff656062"
+        android:layout_weight="0.4"
+        android:textColor="#ff49ffda"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+        android:text="BUTTON"/>
+</LinearLayout>

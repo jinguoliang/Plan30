@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ThirtyDays</string>
+    <string name="appname">Plan30</string>
     <string name="action_settings">Settings</string>
     <string name="overView">概述:</string>
     <string name="progress">进程:</string>

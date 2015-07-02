@@ -1,7 +1,15 @@
 package com.example.jinux.thirtydays.activity;
 
 import android.app.Activity;
+import android.app.IntentService;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.HandlerThread;
+import android.os.IBinder;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.jinux.thirtydays.R;
@@ -43,7 +51,19 @@ public class JourneyActivity extends Activity {
             item.content = journey;
             data.add(item);
         }
-
         return data;
+    }
+
+    class M extends Service{
+
+        @Override
+        public int onStartCommand(Intent intent, int flags, int startId) {
+            return super.onStartCommand(intent, flags, startId);
+        }
+
+        @Override
+        public IBinder onBind(Intent intent) {
+            return null;
+        }
     }
 }

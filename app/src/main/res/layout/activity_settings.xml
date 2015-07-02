@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.jinux.thirtydays.activity.SettingsActivity">
@@ -8,52 +9,68 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/px650"
         android:background="@color/blue_light">
+
+        <com.rey.material.widget.Button
+            android:id="@+id/btnBack"
+            style="@style/FlatWaveColorButtonRippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="@string/back"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textColor="#FF000000" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:paddingBottom="@dimen/px15"
             android:paddingLeft="@dimen/px35"
-            android:textSize="@dimen/px150"
-            android:text="@string/settings"/>
-        </FrameLayout>
+            android:text="@string/settings"
+            android:textSize="@dimen/px150" />
+    </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="@dimen/px35"
-        android:paddingTop="@dimen/px40"
-        android:paddingRight="@dimen/px35">
+        android:paddingRight="@dimen/px35"
+        android:paddingTop="@dimen/px40">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/alarmTime"
-            android:textSize="@dimen/px70"
-            />
+            android:textSize="@dimen/px70" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/alarmTimeDescription"
-            android:textSize="@dimen/px45"/>
+            android:textSize="@dimen/px45" />
+
         <Button
             android:id="@+id/tvAlarmTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="22:50"
-            android:textSize="@dimen/px80"
-            android:padding="@dimen/px30"
+            android:layout_marginBottom="@dimen/px30"
             android:layout_marginTop="@dimen/px30"
             android:background="@color/blue"
-            android:layout_marginBottom="@dimen/px30"
+            android:padding="@dimen/px30"
+            android:shadowColor="@color/gray"
             android:shadowDx="10"
             android:shadowDy="10"
-            android:shadowColor="@color/gray"
-            android:shadowRadius="1"/>
+            android:shadowRadius="1"
+            android:text="22:50"
+            android:textSize="@dimen/px80" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/px5"
             android:background="@color/blue"></View>
-        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

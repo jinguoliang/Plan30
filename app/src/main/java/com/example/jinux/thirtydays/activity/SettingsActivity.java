@@ -40,7 +40,7 @@ public class SettingsActivity extends Activity implements TextWatcher{
     }
 
     private void initData() {
-        tvAlarmTime.setText(SharedPreferenceUtil.getPreferenceString(Constants.PREF_KEY_ALARM_TIME,getString(R.string.defualt_alarm_time)));
+        tvAlarmTime.setText(SharedPreferenceUtil.getPreferenceString(Constants.PREF_KEY_ALARM_TIME, getString(R.string.defualt_alarm_time)));
     }
 
     @OnClick({R.id.tvAlarmTime})
@@ -82,7 +82,7 @@ public class SettingsActivity extends Activity implements TextWatcher{
 
         Intent intent = new Intent(this, NotificationReciver.class);
         PendingIntent pendingIntnet = PendingIntent.getBroadcast(this,0,intent,0);
-        setRepeatTo(pendingIntnet,today, Constants.ONE_DAY);
+        setRepeatTo(pendingIntnet, today, Constants.ONE_DAY);
     }
 
     private void setRepeatTo( PendingIntent pendingIntnet,Calendar start, int interTime) {
@@ -90,7 +90,12 @@ public class SettingsActivity extends Activity implements TextWatcher{
         manager.cancel(pendingIntnet);
 
         long startTime = start.getTime().getTime();
-        manager.setRepeating(AlarmManager.RTC_WAKEUP, startTime,interTime,pendingIntnet);
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, startTime, interTime, pendingIntnet);
+    }
+
+    @OnClick({R.id.btnBack})
+    private void onBackClick(View v){
+        this.finish();
     }
 
 

@@ -16,7 +16,12 @@ import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.Controller;
 import com.example.jinux.thirtydays.common.DialogUtil;
 import com.lidroid.xutils.DbUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.rey.material.util.ViewUtil;
+import com.rey.material.widget.FloatingActionButton;
 
 import java.util.List;
 
@@ -24,23 +29,29 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     private static final String TAG = "MainActivity";
+
+    @ViewInject(R.id.lvPlanList)
     private ListView mPlanList;
-    private PlanListAdapter mPlanListAdapter;
+    @ViewInject(R.id.btnNewPlan)
+    private FloatingActionButton newPlanBtn;
+
     private Dialog mDialog;
     private List<PlanItem> mPlans;
     private boolean isShowDialog;
+    private PlanListAdapter mPlanListAdapter;
     private DbUtils db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ViewUtils.inject(this);
+
         db = DbUtils.create(this);
         initUI();
     }
 
     private void initUI() {
-        mPlanList = (ListView)findViewById(R.id.lvPlanList);
         mPlanListAdapter = new PlanListAdapter(this, preparePlanItemData());
         mPlanList.setAdapter(mPlanListAdapter);
         mPlanList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -125,6 +136,7 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @OnClick({R.id.btnNewPlan})
     public void onNewPlanClick(View v){
         if(mPlans == null||mPlans.size()< Constants.SUGGEST_PLAN_COUNT) {
             isShowDialog = true;
@@ -154,6 +166,7 @@ public class MainActivity extends Activity {
         }
     }
 
+    @OnClick({R.id.action_settings})
     public void onSettinsClick(View view) {
         Controller.launchActivity(this, SettingsActivity.class);
     }

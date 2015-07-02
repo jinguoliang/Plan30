@@ -126,12 +126,12 @@ public class PlanDetailActivity extends Activity {
         return utils.getString();
     }
 
-    @OnClick(R.id.btnEditTitle)
-    public void onEditTitleClick(View v){
-        mTitle.setEnabled(true);
-    }
+//    @OnClick(R.id.btnEditTitle)
+//    public void onEditTitleClick(View v){
+//        mTitle.setEnabled(true);
+//    }
 
-    public void onGoJourneyClick(View view) {
-        Controller.launchActivity(this, JourneyActivity.class);
-    }
+//    public void onGoJourneyClick(View view) {
+//        Controller.launchActivity(this, JourneyActivity.class);
+//    }
 }

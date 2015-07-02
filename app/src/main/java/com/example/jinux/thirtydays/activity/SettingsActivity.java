@@ -25,7 +25,7 @@ import java.text.ParseException;
 import java.util.Calendar;
 
 
-public class SettingsActivity extends Activity implements TextWatcher{
+public class SettingsActivity extends BaseActivity implements TextWatcher{
 
     @ViewInject(R.id.tvAlarmTime)
     Button tvAlarmTime;
@@ -81,7 +81,7 @@ public class SettingsActivity extends Activity implements TextWatcher{
         }
 
         Intent intent = new Intent(this, NotificationReciver.class);
-        PendingIntent pendingIntnet = PendingIntent.getBroadcast(this,0,intent,0);
+        PendingIntent pendingIntnet = PendingIntent.getBroadcast(this, 0, intent, 0);
         setRepeatTo(pendingIntnet, today, Constants.ONE_DAY);
     }
 
@@ -93,10 +93,9 @@ public class SettingsActivity extends Activity implements TextWatcher{
         manager.setRepeating(AlarmManager.RTC_WAKEUP, startTime, interTime, pendingIntnet);
     }
 
+
     @OnClick({R.id.btnBack})
-    private void onBackClick(View v){
+    public void onBackClick(View v){
         this.finish();
     }
-
-
 }

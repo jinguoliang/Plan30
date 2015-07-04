@@ -18,6 +18,7 @@
             android:paddingBottom="@dimen/px15"
             android:paddingLeft="@dimen/px35"
             android:text="@string/main_home"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/px150" />
 
     </FrameLayout>

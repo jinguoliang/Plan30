@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,16 +11,16 @@
         android:background="@color/blue_light">
 
         <EditText
-            android:id="@+id/tvPlanTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:background="@null"
             android:enabled="false"
             android:paddingBottom="@dimen/px15"
             android:paddingLeft="@dimen/px35"
             android:singleLine="true"
-            android:text="@string/main_home"
-            android:background="@null"
+            android:text="@string/summary"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/px150" />
 
     </FrameLayout>
@@ -30,101 +31,132 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/layoutHead"
+        android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:orientation="vertical">
+        android:paddingTop="@dimen/activity_horizontal_margin">
 
-        <RelativeLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvPlanTitleHint"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tvPlanTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读书计划"
+            android:textSize="20dp" />
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="@dimen/px2"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/black" />
 
-            <TextView
-                android:id="@+id/tvStartHint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/start_time"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/tvPlanStartTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/tvStartHint"
-                android:gravity="center"
-                android:text="2015/4/23" />
-        </RelativeLayout>
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvEndHint"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/end_time"
-                android:textSize="10dp" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvPlanEndTime"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvStartHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="0dp"
+                    android:text="@string/start_time"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tvPlanStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/tvStartHint"
+                    android:gravity="center"
+                    android:text="2015/4/23"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/tvEndHint"
-                android:gravity="center"
-                android:text="2015/5/23" />
-        </RelativeLayout>
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        <RelativeLayout
+                <TextView
+                    android:id="@+id/tvEndHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/end_time"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tvPlanEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2015/5/23"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvProgressHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/progress"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tvPlanProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="第2天"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDescriptionHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/overView"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tvPlanDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="这是测试，里面的内容不会出现在应用正式的运行中"
+            android:textSize="10dp" />
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tvProgressHint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/progress"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/tvPlanProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/tvProgressHint"
-                android:gravity="center"
-                android:text="2015/4/23" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tvDescriptionHint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/overView"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/tvPlanDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/tvDescriptionHint"
-                android:gravity="center"
-                android:text="2015/4/23" />
-        </RelativeLayout>
+            android:layout_height="@dimen/px2"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/black" />
 
         <TextView
             android:id="@+id/tvReviewHint"
@@ -150,14 +182,18 @@
             android:text="@string/todaySummary"
             android:textSize="10dp" />
 
-        <EditText
+        <com.rey.material.widget.EditText
+            style="@style/Material.Widget.EditText.Light"
             android:id="@+id/tvSummary"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:paddingTop="@dimen/px10" />
+            android:layout_height="wrap_content"
+            android:textColor="#FF000000"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:inputType="text"
+            android:hint="@string/todaySummaryHint"
+            app:et_inputId="@+id/textfield_et_label_input"
+            app:et_supportMode="none" />
     </LinearLayout>
-
 
 
 </RelativeLayout>

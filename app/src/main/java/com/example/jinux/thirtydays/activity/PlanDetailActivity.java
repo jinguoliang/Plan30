@@ -34,7 +34,7 @@ public class PlanDetailActivity extends Activity {
     private PlanItem plan;
 
     @ViewInject(R.id.tvPlanTitle)
-    private EditText mTitle;
+    private TextView mTitle;
     @ViewInject(R.id.tvPlanStartTime)
     private TextView mStartTime;
     @ViewInject(R.id.tvPlanEndTime)
@@ -46,7 +46,7 @@ public class PlanDetailActivity extends Activity {
     @ViewInject(R.id.rtReview)
     private RatingBar mTodayReview;
     @ViewInject(R.id.tvSummary)
-    private TextView mTodaySummary;
+    private com.rey.material.widget.EditText mTodaySummary;
     private int mProgress;
 
     @Override

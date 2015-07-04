@@ -231,4 +231,5 @@
     <string name="tvPlanTitleHint">名称</string>
     <string name="todaySummaryHint">总结针对这个计划所做的事情</string>
     <string name="detailView">详情页</string>
+    <string name="goodWord">从小事做起，先易后难，建立信心，攻克难关</string>
 </resources>

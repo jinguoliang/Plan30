@@ -148,7 +148,7 @@ public class PlanDetailActivity extends Activity {
 
     @Override
     public void finish() {
-        finish();
+        super.finish();
         overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_slide_out_bottom);
     }
 }

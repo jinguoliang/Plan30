@@ -30,9 +30,9 @@ import java.util.Calendar;
 public class NewPlanActivity extends Activity implements TextWatcher{
 
     @ViewInject(R.id.tvPlanTitle)
-    private EditText mName;
+    private com.rey.material.widget.EditText mName;
     @ViewInject(R.id.tvPlanDescription)
-    private EditText mDescription;
+    private com.rey.material.widget.EditText mDescription;
     @ViewInject(R.id.tvEndTime)
     private TextView mEndTime;
     @ViewInject(R.id.tvStartTime)

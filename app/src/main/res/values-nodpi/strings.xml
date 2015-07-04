@@ -228,8 +228,9 @@
     
     <string name="err_refresh">刷新失败,请重试</string>
     <string name="err_no_network">请联网后重试</string>
-    <string name="tvPlanTitleHint">名称</string>
+    <string name="tvPlanTitleHint">取个名呗</string>
     <string name="todaySummaryHint">总结针对这个计划所做的事情</string>
     <string name="detailView">详情页</string>
     <string name="goodWord">从小事做起，先易后难，建立信心，攻克难关</string>
+    <string name="plan_description">描述你的计划，越详细越好</string>
 </resources>

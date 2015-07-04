@@ -13,7 +13,8 @@
             android:name=".activity.MainActivity"
             android:label="@string/appname" >
         </activity>
-        <activity android:name=".activity.PlanDetailActivity" />
+        <activity android:name=".activity.PlanDetailActivity"
+            android:label="@string/detailView"/>
         <activity android:name=".activity.JourneyActivity" />
         <activity
             android:name=".activity.NewPlanActivity"

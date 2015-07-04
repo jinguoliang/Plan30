@@ -1,66 +1,113 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.jinux.thirtydays.activity.NewPlanActivity">
-    <TextView
-        android:id="@+id/tvTitleHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title"/>
-    <EditText
-        android:id="@+id/tvPlanTitle"
+
+    <FrameLayout
+        android:id="@+id/layoutHead"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px650"
+        android:background="@color/blue_light">
+
+        <com.rey.material.widget.Button
+            android:id="@+id/btnFinish"
+            style="@style/FlatWaveColorButtonRippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="@string/finish"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textColor="@android:color/black" />
+
+        <com.rey.material.widget.Button
+            android:id="@+id/btnBack"
+            style="@style/FlatWaveColorButtonRippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="@string/back"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/goodWord"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@null"
+            android:enabled="false"
+            android:paddingBottom="@dimen/px15"
+            android:paddingLeft="@dimen/px35"
+            android:singleLine="true"
+            android:text="@string/new_plan"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/px150" />
+
+    </FrameLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvTitleHint"/>
-    <TextView
-        android:id="@+id/tvStartTimeHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvPlanTitle"
-        android:text="@string/start_time"/>
-    <TextView
-        android:id="@+id/tvStartTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvStartTimeHint"/>
-    <TextView
-        android:id="@+id/tvEndTimeHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvStartTime"
-        android:text="@string/end_time"/>
-    <TextView
-        android:id="@+id/tvEndTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvEndTimeHint"/>
-    <TextView
-        android:id="@+id/tvPlanHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvEndTime"
-        android:text="@string/overView"/>
-    <EditText
-        android:id="@+id/tvPlanDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvPlanHint"/>
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/save"
-        android:onClick="onSaveClick"/>
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_toRightOf="@id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/back"
-        android:onClick="onBackClick"/>
-</RelativeLayout>
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/tvTitleHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title" />
+
+        <EditText
+            android:id="@+id/tvPlanTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvStartTimeHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_time" />
+
+        <TextView
+            android:id="@+id/tvStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvEndTimeHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/end_time" />
+
+        <TextView
+            android:id="@+id/tvEndTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvPlanHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/overView" />
+
+        <EditText
+            android:id="@+id/tvPlanDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>

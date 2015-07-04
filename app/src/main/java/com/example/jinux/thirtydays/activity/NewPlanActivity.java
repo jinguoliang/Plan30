@@ -80,10 +80,12 @@ public class NewPlanActivity extends Activity implements TextWatcher{
         return super.onOptionsItemSelected(item);
     }
 
+    @OnClick({R.id.btnBack})
     public void onBackClick(View view) {
         finish();
     }
 
+    @OnClick({R.id.btnFinish})
     public void onSaveClick(View view) {
         PlanItem plan = new PlanItem();
         plan.setName(mName.getText().toString());

@@ -134,4 +134,21 @@ public class PlanDetailActivity extends Activity {
 //    public void onGoJourneyClick(View view) {
 //        Controller.launchActivity(this, JourneyActivity.class);
 //    }
+
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
+    @OnClick({R.id.btnFinish})
+    public void onFinishClick(View v){
+        finish();
+    }
+
+    @Override
+    public void finish() {
+        finish();
+        overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_slide_out_bottom);
+    }
 }

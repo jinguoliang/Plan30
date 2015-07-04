@@ -10,6 +10,19 @@
         android:layout_height="@dimen/px650"
         android:background="@color/blue_light">
 
+
+        <com.rey.material.widget.Button
+            android:id="@+id/btnFinish"
+            style="@style/FlatWaveColorButtonRippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            android:text="@string/finish"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textColor="#FF000000" />
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

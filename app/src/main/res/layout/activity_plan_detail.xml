@@ -167,7 +167,6 @@
             android:id="@+id/tvPlanDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="这是测试，里面的内容不会出现在应用正式的运行中"
             android:textSize="10dp" />
 

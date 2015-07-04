@@ -61,6 +61,7 @@ public class MainActivity extends Activity {
                 Bundle bundle = new Bundle();
                 bundle.putLong("id",id);
                 Controller.launchActivity(MainActivity.this,PlanDetailActivity.class,bundle);
+                overridePendingTransition(R.anim.abc_slide_in_bottom,R.anim.abc_fade_out);
             }
         });
         mPlanList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

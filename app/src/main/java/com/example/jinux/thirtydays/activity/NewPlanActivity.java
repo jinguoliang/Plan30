@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.TimeUtil;
+import com.example.jinux.thirtydays.common.Utils;
 import com.example.jinux.thirtydays.widget.MyDatePickerDialog;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
@@ -89,8 +91,14 @@ public class NewPlanActivity extends Activity {
 
     @OnClick({R.id.btnFinish})
     public void onSaveClick(View view) {
+
+        String name = mName.getText().toString();
+        if (TextUtils.isEmpty(name)){
+            Utils.toastShow(this, getString(R.string.emptyPlanName));
+            return;
+        }
         PlanItem plan = new PlanItem();
-        plan.setName(mName.getText().toString());
+        plan.setName(name);
         String time = "";
         plan.setStartTime(mStartDate.getText().toString());
         plan.setEndTime(mEndDate.getText().toString());

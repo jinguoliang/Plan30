@@ -235,4 +235,5 @@
     <string name="plan_description">描述你的计划，越详细越好</string>
     <string name="tvStartDateHint">修改起始日期，结束日期自动更改</string>
     <string name="fmtPlanLength">共%s天</string>
+    <string name="emptyPlanName">计划名不能为空</string>
 </resources>

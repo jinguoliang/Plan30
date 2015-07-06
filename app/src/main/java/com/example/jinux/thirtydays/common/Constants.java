@@ -13,4 +13,5 @@ public class Constants {
      *     shared preference key
      */
     public static final java.lang.String PREF_KEY_ALARM_TIME = "alarm_time";
+    public static final int DEFAULT_PLAN_LENGTH = 30;
 }

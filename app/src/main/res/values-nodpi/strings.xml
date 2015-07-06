@@ -233,4 +233,6 @@
     <string name="detailView">详情页</string>
     <string name="goodWord">从小事做起，先易后难，建立信心，攻克难关</string>
     <string name="plan_description">描述你的计划，越详细越好</string>
+    <string name="tvStartDateHint">修改起始日期，结束日期自动更改</string>
+    <string name="fmtPlanLength">共%s天</string>
 </resources>

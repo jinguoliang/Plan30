@@ -66,14 +66,15 @@
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <com.rey.material.widget.EditText
-            style="@style/Material.Widget.EditText.Light"
             android:id="@+id/tvPlanTitle"
+            style="@style/Material.Widget.EditText.Light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FF000000"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/tvPlanTitleHint"
             android:inputType="text"
-            android:hint="@string/tvPlanTitleHint"/>
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:textColor="#FF000000" />
 
         <TextView
             android:id="@+id/tvStartTimeHint"
@@ -81,10 +82,28 @@
             android:layout_height="wrap_content"
             android:text="@string/start_time" />
 
-        <TextView
-            android:id="@+id/tvStartTime"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.rey.material.widget.Button
+                android:id="@+id/tvStartDate"
+                style="@style/RaiseWaveColorButtonRippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="7月23日"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/tvStartDateHint" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvEndTimeHint"
@@ -92,10 +111,30 @@
             android:layout_height="wrap_content"
             android:text="@string/end_time" />
 
-        <TextView
-            android:id="@+id/tvEndTime"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.rey.material.widget.Button
+                android:id="@+id/tvEndDate"
+                style="@style/RaiseWaveColorButtonRippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="8dp"
+                android:padding="10dp"
+                android:text="7月23日"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Button" />
+
+            <TextView
+                android:id="@+id/tvPlanLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/fmtPlanLength" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvPlanHint"
@@ -104,14 +143,14 @@
             android:text="@string/overView" />
 
         <com.rey.material.widget.EditText
-            style="@style/Material.Widget.EditText.Light"
             android:id="@+id/tvPlanDescription"
+            style="@style/Material.Widget.EditText.Light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FF000000"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:hint="@string/plan_description"
             android:inputType="textMultiLine"
-            android:hint="@string/plan_description"/>
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:textColor="#FF000000" />
 
     </LinearLayout>
 </LinearLayout>

@@ -8,14 +8,12 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.R;
 import com.example.jinux.thirtydays.bean.PlanItem;
+import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.TimeUtil;
-import com.example.jinux.thirtydays.common.Utils;
 import com.example.jinux.thirtydays.widget.MyDatePickerDialog;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
@@ -27,17 +25,20 @@ import java.text.ParseException;
 import java.util.Calendar;
 
 
-public class NewPlanActivity extends Activity implements TextWatcher{
+public class NewPlanActivity extends Activity {
 
     @ViewInject(R.id.tvPlanTitle)
     private com.rey.material.widget.EditText mName;
     @ViewInject(R.id.tvPlanDescription)
     private com.rey.material.widget.EditText mDescription;
-    @ViewInject(R.id.tvEndTime)
-    private TextView mEndTime;
-    @ViewInject(R.id.tvStartTime)
-    private TextView mStartTime;
+    @ViewInject(R.id.tvEndDate)
+    private TextView mEndDate;
+    @ViewInject(R.id.tvStartDate)
+    private TextView mStartDate;
+    @ViewInject(R.id.tvPlanLength)
+    private TextView mTvPlanLength;
     private DbUtils mDb;
+    private int mPlanLength = Constants.DEFAULT_PLAN_LENGTH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +49,14 @@ public class NewPlanActivity extends Activity implements TextWatcher{
 
         Calendar calendar = Calendar.getInstance();
         String nowDateString = TimeUtil.fmtCalendar2String(calendar, Constants.DATE_FMT);
-        mStartTime.addTextChangedListener(this);
-        mStartTime.setText(nowDateString);
+        mStartDate.addTextChangedListener(mStartDateWatcher);
+        mEndDate.addTextChangedListener(mEndDateWatcher);
+        mStartDate.setText(nowDateString);
     }
 
-    @OnClick({R.id.tvEndTime,R.id.tvStartTime})
-    public void OnEndTimeClick(View v) throws ParseException {
-        Dialog d = MyDatePickerDialog.create((TextView)v);
+    @OnClick({R.id.tvEndDate, R.id.tvStartDate})
+    public void onTimeButtonClick(View v) throws ParseException {
+        Dialog d = MyDatePickerDialog.create((TextView) v);
         d.show();
     }
 
@@ -90,9 +92,9 @@ public class NewPlanActivity extends Activity implements TextWatcher{
         PlanItem plan = new PlanItem();
         plan.setName(mName.getText().toString());
         String time = "";
-        plan.setStartTime(mStartTime.getText().toString());
-        plan.setEndTime(mEndTime.getText().toString());
-        plan.setDescription( mDescription.getText().toString());
+        plan.setStartTime(mStartDate.getText().toString());
+        plan.setEndTime(mEndDate.getText().toString());
+        plan.setDescription(mDescription.getText().toString());
         plan.setProgressDay("第一天");
         try {
             mDb.save(plan);
@@ -103,28 +105,55 @@ public class NewPlanActivity extends Activity implements TextWatcher{
 
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    TextWatcher mStartDateWatcher = new TextWatcher() {
 
-    }
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-        Utils.toastShow(this,"text = " + s.toString());
-        Calendar calendar = null;
-        try {
-            calendar = TimeUtil.fmtString2Calendar(s.toString(), Constants.DATE_FMT);
-            calendar.add(Calendar.DAY_OF_YEAR,30);//加30天，多一天少一天都不行
-            String nextMonthString = TimeUtil.fmtCalendar2String(calendar, Constants.DATE_FMT);
-            mEndTime.setText(nextMonthString);
-        } catch (ParseException e) {
-            e.printStackTrace();
         }
 
-    }
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            Calendar calendar = null;
+            try {
+                calendar = TimeUtil.fmtString2Calendar(s.toString(), Constants.DATE_FMT);
+                calendar.add(Calendar.DAY_OF_YEAR, mPlanLength);//加30天，多一天少一天都不行
+                String nextMonthString = TimeUtil.fmtCalendar2String(calendar, Constants.DATE_FMT);
+                mEndDate.setText(nextMonthString);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+        }
+    };
+
+    TextWatcher mEndDateWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            try {
+                int endDay = TimeUtil.fmtString2Calendar(s.toString(), Constants.DATE_FMT).get(Calendar.DAY_OF_YEAR);
+                int start = TimeUtil.fmtString2Calendar(mStartDate.getText().toString(), Constants.DATE_FMT).get(Calendar.DAY_OF_YEAR);
+                mPlanLength = endDay - start;
+                mTvPlanLength.setText(String.format(getResources().getString(R.string.fmtPlanLength), mPlanLength));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+        }
+    };
 }

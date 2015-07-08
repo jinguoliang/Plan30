@@ -1,1 +1,1 @@
-include ':app','materaillib'
+include ':app', 'materaillib', ':MPChartLib-release'

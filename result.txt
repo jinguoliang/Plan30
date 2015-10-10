@@ -1,0 +1,43 @@
+
+Scanning 21.0.2: ..
+Scanning 21.0.2 (Phase 2): .
+Scanning unspecified: ....
+Scanning unspecified (Phase 2): ...
+Scanning 21.0.2: ..
+Scanning 21.0.2 (Phase 2): .
+Scanning 21.0.2: ...............................................................................................................................................
+Scanning 21.0.2 (Phase 2): ..............................................................................................................................................
+Scanning debug: .
+Scanning debug: .
+Scanning 21.0.2: .
+Scanning 21.0.2: ...............................................................................................................................................
+Scanning 21.0.2 (Phase 2): ..............................................................................................................................................
+Scanning 21.0.2: .
+Scanning unspecified: .
+Scanning debug: .
+Scanning debug: ....
+Scanning debug (Phase 2): ...
+Scanning release: ....
+Scanning release (Phase 2): ...
+app/build/intermediates/manifests/androidTest/debug: Error: No .class files were found in project "debug", so none of the classfile based checks could be run. Does the project need to be built first? [LintError]
+app/build/intermediates/manifests/full/debug: Error: No .class files were found in project "debug", so none of the classfile based checks could be run. Does the project need to be built first? [LintError]
+materaillib/build/intermediates/bundles/debug: Error: No .class files were found in project "debug", so none of the classfile based checks could be run. Does the project need to be built first? [LintError]
+materaillib/build/intermediates/manifests/androidTest/debug: Error: No .class files were found in project "debug", so none of the classfile based checks could be run. Does the project need to be built first? [LintError]
+app/src/main: Error: "main" is a Gradle project. To correctly analyze Gradle projects, you should run "gradlew :lint" instead. [LintError]
+materaillib/src/main: Error: "main" is a Gradle project. To correctly analyze Gradle projects, you should run "gradlew :lint" instead. [LintError]
+materaillib/build/intermediates/bundles/release: Error: No .class files were found in project "release", so none of the classfile based checks could be run. Does the project need to be built first? [LintError]
+app/build/intermediates/exploded-aar/plan30/MPChartLib-release/unspecified: Error: No .class files were found in project "unspecified", so none of the classfile based checks could be run. Does the project need to be built first? [LintError]
+app/build/intermediates/exploded-aar/plan30/materaillib/unspecified: Error: No .class files were found in project "unspecified", so none of the classfile based checks could be run. Does the project need to be built first? [LintError]
+app/build/intermediates/exploded-aar/plan30/materaillib/unspecified/res/xml/fab_icon_states.xml: Warning: The resource R.xml.fab_icon_states appears to be unused [UnusedResources]
+materaillib/build/intermediates/bundles/debug/res/xml/fab_icon_states.xml: Warning: The resource R.xml.fab_icon_states appears to be unused [UnusedResources]
+materaillib/build/intermediates/bundles/release/res/xml/fab_icon_states.xml: Warning: The resource R.xml.fab_icon_states appears to be unused [UnusedResources]
+app/build/intermediates/exploded-aar/plan30/materaillib/unspecified/res/values/values.xml:62: Warning: The resource R.string.app_name appears to be unused [UnusedResources]
+    <string name="app_name">Material</string>
+            ~~~~~~~~~~~~~~~
+materaillib/build/intermediates/bundles/debug/res/values/values.xml:62: Warning: The resource R.string.app_name appears to be unused [UnusedResources]
+    <string name="app_name">Material</string>
+            ~~~~~~~~~~~~~~~
+materaillib/build/intermediates/bundles/release/res/values/values.xml:62: Warning: The resource R.string.app_name appears to be unused [UnusedResources]
+    <string name="app_name">Material</string>
+            ~~~~~~~~~~~~~~~
+9 errors, 6 warnings

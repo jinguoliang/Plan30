@@ -15,6 +15,7 @@ import com.example.jinux.thirtydays.bean.PlanItem;
 import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.Controller;
 import com.example.jinux.thirtydays.common.DialogUtil;
+import com.example.jinux.thirtydays.common.Utils;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
@@ -23,6 +24,7 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.rey.material.util.ViewUtil;
 import com.rey.material.widget.FloatingActionButton;
 
+import java.io.File;
 import java.util.List;
 
 

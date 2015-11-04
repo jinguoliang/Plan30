@@ -24,4 +24,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':materaillib')
     compile project(':MPChartLib-release')
+    compile project(':LiteCommon')
 }

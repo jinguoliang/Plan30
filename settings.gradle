@@ -1,1 +1,2 @@
 include ':app', 'materaillib', ':MPChartLib-release'
+include ':LiteCommon'

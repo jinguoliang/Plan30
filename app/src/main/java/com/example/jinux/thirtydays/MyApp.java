@@ -8,6 +8,7 @@ import android.util.Log;
 import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.SharedPreferenceUtil;
 import com.example.jinux.thirtydays.common.TimeUtil;
+import com.firebase.client.Firebase;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -24,6 +25,6 @@ public class MyApp extends Application{
     public void onCreate() {
         super.onCreate();
         mApplication = this;
-        Log.d("hello","Application created");
+        Firebase.setAndroidContext(getApplicationContext());
     }
 }

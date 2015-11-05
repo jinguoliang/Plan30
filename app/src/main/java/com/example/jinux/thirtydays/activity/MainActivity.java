@@ -16,11 +16,16 @@ import com.example.jinux.thirtydays.common.Constants;
 import com.example.jinux.thirtydays.common.Controller;
 import com.example.jinux.thirtydays.common.DialogUtil;
 import com.example.jinux.thirtydays.common.Utils;
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.litesuits.android.log.Log;
 import com.rey.material.util.ViewUtil;
 import com.rey.material.widget.FloatingActionButton;
 
@@ -51,6 +56,40 @@ public class MainActivity extends Activity {
 
         db = DbUtils.create(this);
         initUI();
+
+        Firebase firebase = new Firebase("https://amber-inferno-3476.firebaseio.com/");
+        firebase.child("email").setValue("jinguol999@163.com");
+        firebase.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Log.d(TAG, "onChildAdded + " + s);
+                    Log.d(TAG, "the key: " + dataSnapshot.getKey());
+                    Log.d(TAG, "the value: " + dataSnapshot.getValue());
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Log.d(TAG, "onChildChanged + " + s);
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.d(TAG, "onChildRemoved + ");
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                Log.d(TAG, "onChildMoved + " + s);
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                Log.d(TAG, "onCancelled");
+            }
+        });
     }
 
     private void initUI() {
@@ -61,26 +100,26 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Bundle bundle = new Bundle();
-                bundle.putLong("id",id);
-                Controller.launchActivity(MainActivity.this,PlanDetailActivity.class,bundle);
-                overridePendingTransition(R.anim.abc_slide_in_bottom,R.anim.abc_fade_out);
+                bundle.putLong("id", id);
+                Controller.launchActivity(MainActivity.this, PlanDetailActivity.class, bundle);
+                overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_fade_out);
             }
         });
         mPlanList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, final long id) {
-                mDialog = DialogUtil.createOkCancelDialog(MainActivity.this,"删除计划","你确定删除计划吗？","当然","算了",new View.OnClickListener() {
+                mDialog = DialogUtil.createOkCancelDialog(MainActivity.this, "删除计划", "你确定删除计划吗？", "当然", "算了", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         mDialog.hide();
                         try {
-                            db.deleteById(PlanItem.class,id);
+                            db.deleteById(PlanItem.class, id);
                         } catch (DbException e) {
                             e.printStackTrace();
                         }
                         refreshData();
                     }
-                },new View.OnClickListener() {
+                }, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         mDialog.hide();
@@ -99,7 +138,7 @@ public class MainActivity extends Activity {
         refreshData();
     }
 
-    private void refreshData(){
+    private void refreshData() {
         mPlanListAdapter.setData(preparePlanItemData());
     }
 
@@ -140,15 +179,15 @@ public class MainActivity extends Activity {
     }
 
     @OnClick({R.id.btnNewPlan})
-    public void onNewPlanClick(View v){
-        if(mPlans == null||mPlans.size()< Constants.SUGGEST_PLAN_COUNT) {
+    public void onNewPlanClick(View v) {
+        if (mPlans == null || mPlans.size() < Constants.SUGGEST_PLAN_COUNT) {
             isShowDialog = true;
-            Controller.launchActivity(MainActivity.this,NewPlanActivity.class);
+            Controller.launchActivity(MainActivity.this, NewPlanActivity.class);
             return;
         }
 
-        if(isShowDialog){
-            if(mDialog == null) {
+        if (isShowDialog) {
+            if (mDialog == null) {
                 mDialog = DialogUtil.createOkCancelDialog(this, "添加新计划", "你的计划已经10个了，你确定要这麽多吗？", "当然了", "也是哈", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -164,8 +203,8 @@ public class MainActivity extends Activity {
                 });
             }
             mDialog.show();
-        }else{
-            Controller.launchActivity(MainActivity.this,NewPlanActivity.class);
+        } else {
+            Controller.launchActivity(MainActivity.this, NewPlanActivity.class);
         }
     }
 
